@@ -1,0 +1,12 @@
+#game-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.game-grid__btn {
+  background-image: url("../assets/images/doge.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

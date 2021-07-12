@@ -5,4 +5,6 @@ function loadGetReadyTemplate() {
     <h1 class="get-ready__title">Get ready...</h1>
   </div>
 `;
+
+  gameBoard.innerHTML = template;
 }
