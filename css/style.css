@@ -1,3 +1,11 @@
 @import url("layout.css");
 @import url("gameBoard.css");
 @import url("scoreBoard.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
