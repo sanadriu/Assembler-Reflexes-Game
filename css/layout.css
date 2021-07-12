@@ -1,10 +1,29 @@
 main {
   display: flex;
   flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
 }
 
-@media (min-width: 480px) {
+#scoreboard {
+  width: 100%;
+  background-color: blue;
+}
+
+#gameboard {
+  width: 100%;
+  background-color: red;
+}
+
+@media (min-width: 768px) {
   main {
     flex-direction: row;
+  }
+  #gameboard {
+    width: 70%;
+    order: -1;
+  }
+  #scoreboard {
+    width: 30%;
   }
 }
