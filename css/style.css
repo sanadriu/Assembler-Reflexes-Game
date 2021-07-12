@@ -2,3 +2,11 @@
 @import url("gameBoard.css");
 @import url("scoreBoard.css");
 @import url("userName.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
