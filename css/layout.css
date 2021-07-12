@@ -2,6 +2,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
   width: 95%;
   height: 100vh;
@@ -10,7 +11,7 @@ main {
 
 #scoreboard {
   width: 100%;
-  height: 320px;
+  height: 20rem;
 
   border-radius: 4px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
@@ -18,7 +19,7 @@ main {
 
 #gameboard {
   width: 100%;
-  height: 320px;
+  height: 20rem;
 
   border-radius: 4px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
@@ -31,11 +32,11 @@ main {
   }
   #gameboard {
     width: 70%;
-    height: 400px;
+    height: 25rem;
     order: -1;
   }
   #scoreboard {
     width: 30%;
-    height: 400px;
+    height: 25rem;
   }
 }
