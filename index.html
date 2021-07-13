@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preload" href="assets/images/doge.png" as="image" />
     <title>Reflex Game</title>
   </head>
   <body>
     <main>
-      <div id="scoreboard"></div>
+      <div id="scoreboard">
+        <h2 class="scoreboard__title">Score Board<h2>
+        <div class="scoreboard__table">
+        </div>
+      </div>
 
       <div id="gameboard"></div>
     </main>
@@ -23,6 +28,7 @@
     <script src="js/game.js"></script>
     <script>
       userName();
+      displayRanking();
     </script>
   </body>
 </html>

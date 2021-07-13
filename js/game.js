@@ -35,6 +35,7 @@ function stopGame() {
   game.lastEndTime = new Date();
   game.lastResultTime = parseFloat(((game.lastEndTime - game.lastStartTime) / 1000).toFixed(2));
   updateRanking();
+  displayRanking();
   loadUserResultTemplate(game.lastResultTime);
 
   // Reset
