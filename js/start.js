@@ -21,7 +21,7 @@ function setSettings() {
       <form id="settings-form">
         <div class="input-field">
             <label for="time">Change Time</label>
-            <input type="text" id="time" name="gridReloadInterval" required pattern="^[0-9](\.[0-9])?$" maxlength="3" size="3" value="${game.parameters.gridReloadInterval}"/>
+            <input type="text" id="time" name="gridReloadInterval" required pattern="^[0-9](\.[0-9])?$" maxlength="3" value="${game.parameters.gridReloadInterval}"/>
         </div>
         <div class="input-field">
             <label for="rows">Num. of rows</label>
