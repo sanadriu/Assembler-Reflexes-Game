@@ -1,4 +1,4 @@
-#user-start {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,9 +25,3 @@
   background-color: black;
   border: 1px solid grey;
 }
-/*
-#user-start label,
-#user-start h3 {
-  text-align: center;
-}
-*/

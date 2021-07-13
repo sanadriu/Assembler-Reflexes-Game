@@ -3,6 +3,7 @@
 @import url("gameBoard.css");
 @import url("scoreBoard.css");
 @import url("userName.css");
+@import url("start.css");
 
 * {
   box-sizing: border-box;

@@ -1,0 +1,17 @@
+#start-button {
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  border: 1px solid grey;
+
+  display: block;
+  width: 16rem;
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
