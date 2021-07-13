@@ -2,7 +2,7 @@ const game = {
   parameters: {
     num_columns: 8,
     num_rows: 4,
-    gridReloadInterval: 1000,
+    gridReloadInterval: 500,
   },
   ranking: [
     { username: "Gold", time: 0.3 },
@@ -17,45 +17,25 @@ const game = {
 };
 
 function startGame() {
-  const getReadyTime = Math.floor(Math.random() * 11);
-  game.lastStartTime = new Date();
+  const getReadyTime = Math.floor(Math.random() * 11) * 1000;
 
   loadGetReadyTemplate();
 
   setTimeout(() => {
+    game.lastStartTime = new Date();
     game.gridReloadTimer = setInterval(() => {
-      loadGameGridTemplate();
-    }, game.gridReloadInterval);
+      loadGameGridTemplate(game.parameters.num_rows, game.parameters.num_columns);
+    }, game.parameters.gridReloadInterval);
   }, getReadyTime);
 }
 
 function stopGame() {
   clearInterval(game.gridReloadTimer);
   game.lastEndTime = new Date();
-  getTimePlayed();
+  game.lastResultTime = parseFloat(((game.lastEndTime - game.lastStartTime) / 1000).toFixed(2));
   updateRanking();
+  loadUserResultTemplate(game.lastResultTime);
 }
-
-function getTimePlayed() {
-  game.lastResultTime = parseFloat(((game.endTime - game.startTime) / 1000).toFixed(2));
-}
-
-/*
-function updateRanking() {
-  let isInserted = false;
-
-  for (let i = 0; i < game.ranking.length && !isInserted; i++) {
-    if (game.lastResultTime < game.ranking[i].time) {
-      game.ranking.splice(i, 0, { username: game.currentUser, time: game.lastResultTime });
-      isInserted = true;
-    }
-  }
-
-  if (game.ranking.length < 10 && !isInserted) {
-    game.ranking.push({ username: game.currentUser, time: game.lastResultTime });
-  }
-}
-*/
 
 function updateRanking() {
   game.ranking.push({ username: game.currentUser, time: game.lastResultTime });
@@ -64,4 +44,6 @@ function updateRanking() {
   });
 
   if (game.ranking.length > 10) game.ranking = game.ranking.slice(0, 10);
+
+  console.log(game.ranking);
 }
