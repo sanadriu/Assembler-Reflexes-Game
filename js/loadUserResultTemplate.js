@@ -14,9 +14,6 @@ function loadUserResultTemplate(time) {
     </div>
   `;
 
-  /*
   gameBoard.innerHTML = template;
-
   document.addEventListener("click", (event) => {});
-  */
 }
