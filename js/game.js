@@ -2,7 +2,7 @@ const game = {
   parameters: {
     num_columns: 8,
     num_rows: 4,
-    gridReloadInterval: 500,
+    gridReloadInterval: 1000,
   },
   ranking: [
     { username: "Gold", time: 0.3 },
@@ -22,8 +22,9 @@ function startGame() {
   loadGetReadyTemplate();
 
   setTimeout(() => {
-    game.lastStartTime = new Date();
     game.gridReloadTimer = setInterval(() => {
+      if (game.lastStartTime === null) game.lastStartTime = new Date();
+
       loadGameGridTemplate(game.parameters.num_rows, game.parameters.num_columns);
     }, game.parameters.gridReloadInterval);
   }, getReadyTime);
@@ -35,12 +36,18 @@ function stopGame() {
   game.lastResultTime = parseFloat(((game.lastEndTime - game.lastStartTime) / 1000).toFixed(2));
   updateRanking();
   loadUserResultTemplate(game.lastResultTime);
+
+  // Reset
+  game.gridReloadTimer = null;
+  game.lastStartTime = null;
+  game.lastEndTime = null;
+  game.lastResultTime = null;
 }
 
 function updateRanking() {
   game.ranking.push({ username: game.currentUser, time: game.lastResultTime });
-  game.ranking.sort((a, b) => {
-    a.time - b.time;
+  game.ranking = game.ranking.sort((a, b) => {
+    return a.time - b.time;
   });
 
   if (game.ranking.length > 10) game.ranking = game.ranking.slice(0, 10);
