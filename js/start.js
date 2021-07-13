@@ -5,8 +5,6 @@ function start() {
   </div>`;
 
   // Adding event for next step "getReady"
-  //const startButton = document.getElementById("start-button");
-  //startButton.addEventListener("click", loadGetReadyTemplate);
 
   gameBoard.innerHTML = template;
   gameBoard.querySelector("#start").addEventListener("click", (event) => {
