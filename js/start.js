@@ -9,5 +9,5 @@ function start(event) {
 
   // Adding event for next step "getReady"
   const startButton = document.getElementById("start-button");
-  startButton.addEventListener("click", getReady);
+  startButton.addEventListener("click", loadGetReadyTemplate);
 }
