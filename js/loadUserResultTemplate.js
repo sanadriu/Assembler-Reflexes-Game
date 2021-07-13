@@ -8,15 +8,20 @@ function loadUserResultTemplate(time) {
         <span class="user-result__result">${time} seconds.</span>
       </section>
       <nav>
-        <button class="user-result__btn" data-action="play">Play Again</button>
-        <button class="user-result__btn" data-action="home">Go Home</button>
+        <button class="user-result__btn" data-action="start-game">Play Again</button>
+        <button class="user-result__btn" data-action="go-home">Go Home</button>
       </nav>
     </div>
   `;
 
-  /*
   gameBoard.innerHTML = template;
+  gameBoard.addEventListener("click", (event) => {
+    if (event.target.matches("[data-action='start-game']")) {
+      startGame();
+    }
 
-  document.addEventListener("click", (event) => {});
-  */
+    if (event.target.matches("[data-action='go-home']")) {
+      loadUserStartTemplate();
+    }
+  });
 }
