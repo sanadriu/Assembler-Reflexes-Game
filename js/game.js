@@ -2,7 +2,7 @@ const game = {
   parameters: {
     num_columns: 8,
     num_rows: 4,
-    gridReloadInterval: 1000,
+    gridReloadInterval: 1,
   },
   ranking: [
     { username: "Gold", time: 0.3 },
@@ -26,7 +26,7 @@ function startGame() {
       if (game.lastStartTime === null) game.lastStartTime = new Date();
 
       loadGameGridTemplate(game.parameters.num_rows, game.parameters.num_columns);
-    }, game.parameters.gridReloadInterval);
+    }, game.parameters.gridReloadInterval * 1000);
   }, getReadyTime);
 }
 

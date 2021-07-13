@@ -17,6 +17,11 @@ function userName() {
   gameBoard.querySelector("#input-text").addEventListener("submit", (event) => {
     event.preventDefault();
     game.currentUser = event.target.username.value;
+    game.parameters = {
+      num_columns: 8,
+      num_rows: 4,
+      gridReloadInterval: 1,
+    };
     start();
   });
 }
