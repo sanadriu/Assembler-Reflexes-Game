@@ -1,0 +1,34 @@
+#user-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+}
+
+#input-text {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
+  gap: 1rem;
+}
+
+#insert-username {
+  display: flex;
+  flex-direction: column;
+}
+
+#user-submit {
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  border: 1px solid grey;
+}
+
+/*
+#user-start label,
+#user-start h3 {
+  text-align: center;
+}
+*/
