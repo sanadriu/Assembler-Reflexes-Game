@@ -4,18 +4,20 @@ main {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  width: 95%;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 #scoreboard {
   width: 100%;
-  height: 15rem;
+  height: auto;
 
   text-align: center;
   border-radius: 4px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
 }
 
 #gameboard {
@@ -24,18 +26,22 @@ main {
 
   border-radius: 4px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media (min-width: 768px) {
   main {
     flex-direction: row;
     justify-content: space-between;
+    width: 768px;
   }
+
   #gameboard {
     width: 70%;
     height: 25rem;
     order: -1;
   }
+
   #scoreboard {
     width: 30%;
     height: 25rem;

@@ -1,23 +1,35 @@
-
-.scoresTable {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
+.scoreboard__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 1rem 0;
 }
 
-.scoresTable1 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: 1%;
-    
+.scoreboard__table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
 }
 
-.scoresTable1 article {
-    border:1px rgb(0, 0, 0) solid;
-    border-radius:5px;
-    background-color: gray;
-    
+.scoreboard__record {
+  border: 1px solid black;
+  border-radius: 2px;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.5rem;
+  font-weight: 700;
+  background-color: #ffffff;
+}
 
+@media screen and (min-width: 768px) {
+  .scoreboard__table {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .scoreboard__record {
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 0.75rem;
+  }
 }
