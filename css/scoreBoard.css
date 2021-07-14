@@ -7,7 +7,7 @@
 .scoreboard__table {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .scoreboard__record {
@@ -37,4 +37,8 @@
     line-height: 1.5rem;
     font-size: 0.75rem;
   }
+}
+
+#current-user {
+  font-size: 0.75rem;
 }

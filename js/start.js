@@ -12,6 +12,10 @@ function start() {
     if (event.target.matches("#start-button")) startGame();
     if (event.target.matches("#settings-button")) setSettings();
   });
+
+  //
+  var currentUser = document.getElementById("current-user");
+  currentUser.innerHTML = `Current user: ${game.currentUser}`;
 }
 
 function setSettings() {
@@ -37,11 +41,14 @@ function setSettings() {
   `;
 
   gameBoard.innerHTML = template;
-  gameBoard.querySelector("#settings-form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    game.parameters.gridReloadInterval = event.target.gridReloadInterval.value;
-    game.parameters.num_rows = event.target.num_rows.value;
-    game.parameters.num_columns = event.target.num_columns.value;
-    start();
-  });
+  gameBoard
+    .querySelector("#settings-form")
+    .addEventListener("submit", (event) => {
+      event.preventDefault();
+      game.parameters.gridReloadInterval =
+        event.target.gridReloadInterval.value;
+      game.parameters.num_rows = event.target.num_rows.value;
+      game.parameters.num_columns = event.target.num_columns.value;
+      start();
+    });
 }
