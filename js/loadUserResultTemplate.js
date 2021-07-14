@@ -1,6 +1,6 @@
 function loadUserResultTemplate(time) {
-  const gameBoard = document.querySelector("#gameboard");
-  const template = `
+	const gameBoard = document.querySelector("#gameboard");
+	const template = `
     <div id="user-result">
       <section>
         <h2 class="user-result__title">Your score</h2>
@@ -14,14 +14,14 @@ function loadUserResultTemplate(time) {
     </div>
   `;
 
-  gameBoard.innerHTML = template;
-  gameBoard.querySelector("#user-result").addEventListener("click", (event) => {
-    if (event.target.matches("[data-action='start-game']")) {
-      startGame();
-    }
+	gameBoard.innerHTML = template;
+	gameBoard.querySelector("#user-result").addEventListener("click", (event) => {
+		if (event.target.matches("[data-action='start-game']")) {
+			startGame();
+		}
 
-    if (event.target.matches("[data-action='go-home']")) {
-      userName();
-    }
-  });
+		if (event.target.matches("[data-action='go-home']")) {
+			loadUserNameTemplate();
+		}
+	});
 }
