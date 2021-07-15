@@ -1,4 +1,4 @@
-#user-result {
+.game-result {
 	padding: 2rem;
 	height: 100%;
 	display: flex;
@@ -6,27 +6,27 @@
 	justify-content: space-between;
 }
 
-.user-result__title {
+.game-result__title {
 	font-size: 2rem;
 	font-weight: 700;
 	margin: 0 0 1.25rem;
 }
 
-.user-result__message {
+.game-result__message {
 	font-size: 1.2rem;
 	font-weight: 300;
 	display: block;
 	margin: 1.25rem 0;
 }
 
-.user-result__result {
+.game-result__result {
 	font-size: 1.5rem;
 	font-weight: 700;
 	display: block;
 	margin: 1.25rem 0;
 }
 
-.user-result__btn {
+.game-result__btn {
 	display: block;
 	width: 16rem;
 	max-width: 100%;

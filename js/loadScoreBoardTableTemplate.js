@@ -4,7 +4,7 @@ function loadScoreBoardTableTemplate() {
 	let template = "";
 
 	for (let i = 0; i < game.ranking.length; i++) {
-		template += `<article class="scoreboard__record">#${i + 1} - ${game.ranking[i].username} ${game.ranking[i].time}</article>`;
+		template += `<li class="scoreboard__record">#${i + 1} - ${game.ranking[i].username} ${game.ranking[i].time}</li>`;
 	}
 
 	scoretable.innerHTML = template;

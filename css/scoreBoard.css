@@ -1,44 +1,49 @@
 .scoreboard__title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 1rem 0;
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+	margin: 0;
+}
+
+.scoreboard__current-user {
+	font-size: 0.75rem;
+	text-align: center;
 }
 
 .scoreboard__table {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.3rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.3rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .scoreboard__record {
-  border: 1px solid black;
-  border-radius: 4px;
-  height: 2rem;
-  line-height: 2rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background-color: #200144;
-  overflow: hidden;
+	border: 1px solid black;
+	border-radius: 4px;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+	background-color: #200144;
+	text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-  .scoreboard__title {
-    font-size: 1.2rem;
-  }
+@media screen and (min-width: 568px) {
+	.scoreboard__title {
+		font-size: 1rem;
+	}
 
-  .scoreboard__table {
-    grid-template-columns: repeat(1, 1fr);
-  }
+	.scoreboard__table {
+		grid-template-columns: repeat(1, 1fr);
+	}
 
-  .scoreboard__record {
-    border: 1px solid black;
-    border-radius: 2px;
-    height: 1.5rem;
-    line-height: 1.5rem;
-    font-size: 0.75rem;
-  }
-}
-
-#current-user {
-  font-size: 0.75rem;
+	.scoreboard__record {
+		border: 1px solid black;
+		border-radius: 2px;
+		height: 1.5rem;
+		line-height: 1.5rem;
+		font-size: 0.75rem;
+	}
 }

@@ -3,50 +3,44 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
+	column-gap: 2.5vw;
+	row-gap: 1.5vh;
+
 	min-height: 100vh;
 	margin: 0 auto;
-	padding: 1rem;
+	padding: 1.75vh 1.75vw;
+	max-width: 768px;
 }
 
 #scoreboard {
 	width: 100%;
-	height: auto;
+	height: 37.5vh;
 
-	text-align: center;
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+	padding: 1rem;
+	overflow-y: scroll;
+
 	color: white;
 	background-color: rgba(132, 0, 255, 0.35);
-	padding: 1rem;
 	border-radius: 12px;
 	border: 6px double rgb(133, 42, 121);
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 
 #gameboard {
 	width: 100%;
-	height: 25rem;
+	height: 57.5vh;
 
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 	color: white;
 	background-color: rgba(132, 0, 255, 0.35);
 	border-radius: 12px;
 	border: 6px double rgb(133, 42, 121);
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 
-.container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin: 0 auto;
-	height: 100%;
-}
-
-@media (min-width: 768px) {
+@media screen and (min-width: 568px) {
 	main {
 		flex-direction: row;
 		justify-content: space-between;
-		width: 768px;
 	}
 
 	#gameboard {
