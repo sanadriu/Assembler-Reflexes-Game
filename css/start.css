@@ -1,43 +1,25 @@
-#start-button,
-#settings-button {
-  display: block;
-  width: 16rem;
-  margin: 0.75rem 0;
-  padding: 0.75rem;
-  font-weight: 600;
-  font-family: inherit;
-  font-size: 1.2rem;
-  color: #ffffff;
-  background-color: #000000;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-#settings-form {
-  width: 80%;
-}
-
-#settings-submit {
-  display: block;
-  margin: 0.75rem auto;
-  padding: 0.75rem;
-  font-weight: 600;
-  font-family: inherit;
-  color: #ffffff;
-  background-color: #000000;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
+#start-button {
+	display: block;
+	width: 16rem;
+	margin: 0.75rem 0;
+	padding: 0.75rem;
+	font-weight: 600;
+	font-family: inherit;
+	font-size: 1.2rem;
+	color: #ffffff;
+	background-color: #000000;
+	border: none;
+	border-radius: 0.25rem;
+	cursor: pointer;
 }
 
 .input-field {
-  display: flex;
-  justify-content: space-between;
-  margin: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	margin: 0.5rem;
 }
 
 .input-field > input[type="text"],
 .input-field > input[type="number"] {
-  width: 6ch;
+	width: 6ch;
 }

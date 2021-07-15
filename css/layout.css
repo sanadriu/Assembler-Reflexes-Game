@@ -1,53 +1,62 @@
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	min-height: 100vh;
+	margin: 0 auto;
+	padding: 1rem;
 }
 
 #scoreboard {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
 
-  text-align: center;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-  color: white;
-  background-color: rgba(132, 0, 255, 0.35);
-  padding: 1rem;
-  border-radius: 12px;
-  border: 6px double rgb(133, 42, 121);
+	text-align: center;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+	color: white;
+	background-color: rgba(132, 0, 255, 0.35);
+	padding: 1rem;
+	border-radius: 12px;
+	border: 6px double rgb(133, 42, 121);
 }
 
 #gameboard {
-  width: 100%;
-  height: 25rem;
+	width: 100%;
+	height: 25rem;
 
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-  color: white;
-  background-color: rgba(132, 0, 255, 0.35);
-  border-radius: 12px;
-  border: 6px double rgb(133, 42, 121);
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+	color: white;
+	background-color: rgba(132, 0, 255, 0.35);
+	border-radius: 12px;
+	border: 6px double rgb(133, 42, 121);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	height: 100%;
 }
 
 @media (min-width: 768px) {
-  main {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 768px;
-  }
+	main {
+		flex-direction: row;
+		justify-content: space-between;
+		width: 768px;
+	}
 
-  #gameboard {
-    width: 70%;
-    height: 25rem;
-    order: -1;
-  }
+	#gameboard {
+		width: 70%;
+		height: 25rem;
+		order: -1;
+	}
 
-  #scoreboard {
-    width: 30%;
-    height: 25rem;
-  }
+	#scoreboard {
+		width: 30%;
+		height: 25rem;
+	}
 }
