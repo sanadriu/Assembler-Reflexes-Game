@@ -34,13 +34,5 @@ function userName() {
       usernameError.textContent =
         "Insert a username between 3 and 8 characters.";
     }
-
-    /* else {
-      event.target.username.insertAdjacentHTML(
-        "afterend",
-        "<p style='color: red';>Insert a username between 3 and 8 characters.</p>"
-      );
-      
-    }*/
   });
 }
