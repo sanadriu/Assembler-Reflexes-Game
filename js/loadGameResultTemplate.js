@@ -1,4 +1,4 @@
-function loadgameResultTemplate(messageTemplate) {
+function loadGameResultTemplate(messageTemplate) {
 	const gameBoard = document.querySelector("#gameboard");
 	const template = `
     <div id="game-result" class="game-result">

@@ -40,14 +40,14 @@ function stopGame() {
 
 		updateRanking(game.resultTime);
 		loadScoreBoardTableTemplate();
-		loadgameResultTemplate(`
+		loadGameResultTemplate(`
 			<h2 class="game-result__title">Your score</h2>
       <span class="game-result__message">Your reaction time was</span>
       <span class="game-result__result">${game.resultTime} seconds.</span>
 			<span class="game-result__message">${isInRankingMessage()}</span>
 		`);
 	} else {
-		loadgameResultTemplate(`
+		loadGameResultTemplate(`
 			<h2 class="game-result__title">Too slow</h2>
 			<span class="game-result__message">Your reaction time was</span>
 			<span class="game-result__result">Over 10 seconds!</span>
