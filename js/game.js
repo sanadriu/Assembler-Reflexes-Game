@@ -67,8 +67,6 @@ function updateRanking() {
 	});
 
 	if (game.ranking.length > 10) game.ranking = game.ranking.slice(0, 10);
-
-	console.log(game.ranking);
 }
 
 function isInRankingMessage() {
