@@ -7,6 +7,7 @@ function userName() {
         <div id="insert-username">
             <label for="username">Username</label>
             <input id="username" type="text" placeholder="Insert your username" required/>
+            <p id="username-error" style='color: red';></p>
         </div>
         <input id="user-submit" class="button" type="submit" value="START">
       </form>
@@ -16,12 +17,30 @@ function userName() {
   gameBoard.innerHTML = template;
   gameBoard.querySelector("#input-text").addEventListener("submit", (event) => {
     event.preventDefault();
-    game.currentUser = event.target.username.value;
-    game.parameters = {
-      num_columns: 8,
-      num_rows: 4,
-      gridReloadInterval: 1,
-    };
-    start();
+
+    if (
+      event.target.username.value.length <= 8 &&
+      event.target.username.value.length >= 3
+    ) {
+      game.currentUser = event.target.username.value;
+      game.parameters = {
+        num_columns: 8,
+        num_rows: 4,
+        gridReloadInterval: 1,
+      };
+      start();
+    } else {
+      let usernameError = document.getElementById("username-error");
+      usernameError.textContent =
+        "Insert a username between 3 and 8 characters.";
+    }
+
+    /* else {
+      event.target.username.insertAdjacentHTML(
+        "afterend",
+        "<p style='color: red';>Insert a username between 3 and 8 characters.</p>"
+      );
+      
+    }*/
   });
 }
