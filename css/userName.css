@@ -1,28 +1,19 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  height: 100%;
-}
-
 #input-text {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 3rem;
-  gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 3rem;
+	gap: 1rem;
 }
 
 #insert-username {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 #user-submit {
-  color: white;
-  font-weight: bold;
-  font-family: inherit;
-  background-color: black;
-  border: 1px solid grey;
+	color: white;
+	font-weight: bold;
+	font-family: inherit;
+	background-color: black;
+	border: 1px solid grey;
 }

@@ -11,9 +11,8 @@ const game = {
 	],
 	currentUser: null,
 	gridReloadTimer: null,
-	lastStartTime: null,
-	lastEndTime: null,
-	lastResultTime: null,
+	gridReloads: 0,
+	startTime: null,
 };
 
 function startGame() {
@@ -23,29 +22,43 @@ function startGame() {
 
 	setTimeout(() => {
 		game.gridReloadTimer = setInterval(() => {
-			if (game.lastStartTime === null) game.lastStartTime = new Date();
+			if (game.startTime === null) game.startTime = new Date();
 
 			loadGameGridTemplate(game.parameters.num_rows, game.parameters.num_columns);
+
+			if (++game.gridReloads === 10) stopGame();
 		}, game.parameters.gridReloadInterval * 1000);
 	}, getReadyTime);
 }
 
 function stopGame() {
 	clearInterval(game.gridReloadTimer);
-	game.lastEndTime = new Date();
-	game.lastResultTime = parseFloat(((game.lastEndTime - game.lastStartTime) / 1000).toFixed(2));
-	updateRanking();
-	loadScoreBoardTableTemplate();
-	loadUserResultTemplate(game.lastResultTime);
 
+	if (game.gridReloads < 10) {
+		const time = parseFloat(((new Date() - game.startTime) / 1000).toFixed(2));
+
+		updateRanking(time);
+		loadScoreBoardTableTemplate();
+		loadUserResultTemplate(`
+			<h2 class="user-result__title">Your score</h2>
+      <span class="user-result__message">Your reaction time was</span>
+      <span class="user-result__result">${time} seconds.</span>
+		`);
+	} else {
+		loadUserResultTemplate(`
+			<h2 class="user-result__title">Too slow</h2>
+			<span class="user-result__message">Your reaction time was</span>
+			<span class="user-result__result">Over 10 seconds!</span>
+		`);
+	}
+
+	game.startTime = null;
 	game.gridReloadTimer = null;
-	game.lastStartTime = null;
-	game.lastEndTime = null;
-	game.lastResultTime = null;
+	game.gridReloads = 0;
 }
 
-function updateRanking() {
-	game.ranking.push({ username: game.currentUser, time: game.lastResultTime });
+function updateRanking(time) {
+	game.ranking.push({ username: game.currentUser, time: time });
 	game.ranking = game.ranking.sort((a, b) => {
 		return a.time - b.time;
 	});
