@@ -13,6 +13,7 @@ const game = {
 	gridReloadTimer: null,
 	gridReloads: 0,
 	startTime: null,
+	resultTime: null,
 };
 
 function startGame() {
@@ -35,14 +36,15 @@ function stopGame() {
 	clearInterval(game.gridReloadTimer);
 
 	if (game.gridReloads < 10) {
-		const time = parseFloat(((new Date() - game.startTime) / 1000).toFixed(2));
+		game.resultTime = parseFloat(((new Date() - game.startTime) / 1000).toFixed(2));
 
-		updateRanking(time);
+		updateRanking(game.resultTime);
 		loadScoreBoardTableTemplate();
 		loadUserResultTemplate(`
 			<h2 class="user-result__title">Your score</h2>
       <span class="user-result__message">Your reaction time was</span>
-      <span class="user-result__result">${time} seconds.</span>
+      <span class="user-result__result">${game.resultTime} seconds.</span>
+			<span class="user-result__message">${isInRankingMessage()}</span>
 		`);
 	} else {
 		loadUserResultTemplate(`
@@ -53,12 +55,13 @@ function stopGame() {
 	}
 
 	game.startTime = null;
+	game.resultTime = null;
 	game.gridReloadTimer = null;
 	game.gridReloads = 0;
 }
 
-function updateRanking(time) {
-	game.ranking.push({ username: game.currentUser, time: time });
+function updateRanking() {
+	game.ranking.push({ username: game.currentUser, time: game.resultTime });
 	game.ranking = game.ranking.sort((a, b) => {
 		return a.time - b.time;
 	});
@@ -66,4 +69,12 @@ function updateRanking(time) {
 	if (game.ranking.length > 10) game.ranking = game.ranking.slice(0, 10);
 
 	console.log(game.ranking);
+}
+
+function isInRankingMessage() {
+	if (game.ranking.find((record) => record.username === game.currentUser && record.time === game.resultTime)) {
+		return "You are in the ranking! &#127775;";
+	} else {
+		return "You are not in the ranking &#128546;";
+	}
 }
